@@ -34,6 +34,32 @@ class LayerView: UIView {
 
     }
     
+    
+    
+    func setup(image image: UIImage, holeRadius: CGFloat) {
+        
+        self.holeRadius = holeRadius
+        
+        let imageLayer = CALayer()
+        imageLayer.contents = image.CGImage
+        imageLayer.frame = self.bounds
+        imageLayer.contentsGravity = kCAGravityResizeAspect
+        
+        maskLayer = CAShapeLayer()
+        maskLayer?.fillRule = kCAFillRuleEvenOdd
+        maskLayer?.fillColor = UIColor.blackColor().CGColor
+        
+        moveHoleCenterTo(self.center)
+        
+        imageLayer.mask = maskLayer
+        
+        self.layer.addSublayer(imageLayer)
+        
+    }
+
+    
+    
+    
     func moveHoleCenterTo(point: CGPoint) {
         guard let holeRadius = holeRadius else {
             return

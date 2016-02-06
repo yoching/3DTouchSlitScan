@@ -30,7 +30,8 @@ class ViewController: UIViewController {
         for i in 0..<countSlot {
             let layerView = LayerView()
             layerView.frame = self.view.bounds
-            layerView.setup(calculateGradient(Double(i)/Double(countSlot)), holeRadius: CGFloat(i) * 10)
+            layerView.setup(image: UIImage(named: String(i))!, holeRadius:  CGFloat(i) * 10)
+//            layerView.setup(calculateGradient(Double(i)/Double(countSlot)), holeRadius: CGFloat(i) * 10)
             layers.append(layerView)
             self.view.addSubview(layerView)
         }
