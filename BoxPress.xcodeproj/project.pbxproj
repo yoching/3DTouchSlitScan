@@ -14,6 +14,7 @@
 		E3735E881C65EB4300EB262A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3735E861C65EB4300EB262A /* LaunchScreen.storyboard */; };
 		E3735E931C65EB4300EB262A /* BoxPressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3735E921C65EB4300EB262A /* BoxPressTests.swift */; };
 		E3735E9E1C65EB4300EB262A /* BoxPressUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3735E9D1C65EB4300EB262A /* BoxPressUITests.swift */; };
+		E3735EAC1C65EBC400EB262A /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3735EAB1C65EBC400EB262A /* LayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E3735E991C65EB4300EB262A /* BoxPressUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoxPressUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3735E9D1C65EB4300EB262A /* BoxPressUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPressUITests.swift; sourceTree = "<group>"; };
 		E3735E9F1C65EB4300EB262A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3735EAB1C65EBC400EB262A /* LayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				E3735E841C65EB4300EB262A /* Assets.xcassets */,
 				E3735E861C65EB4300EB262A /* LaunchScreen.storyboard */,
 				E3735E891C65EB4300EB262A /* Info.plist */,
+				E3735EAB1C65EBC400EB262A /* LayerView.swift */,
 			);
 			path = BoxPress;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3735EAC1C65EBC400EB262A /* LayerView.swift in Sources */,
 				E3735E801C65EB4300EB262A /* ViewController.swift in Sources */,
 				E3735E7E1C65EB4300EB262A /* AppDelegate.swift in Sources */,
 			);
