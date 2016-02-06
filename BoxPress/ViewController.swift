@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     }
 
 
-    let countSlot = 100
+    var layers = [LayerView]()
+    let countSlot = 10
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -29,7 +30,8 @@ class ViewController: UIViewController {
         for i in 0..<countSlot {
             let layerView = LayerView()
             layerView.frame = self.view.bounds
-            layerView.setup(calculateGradient(Double(i)/Double(countSlot)), holeRadius: CGFloat(i))
+            layerView.setup(calculateGradient(Double(i)/Double(countSlot)), holeRadius: CGFloat(i) * 10)
+            layers.append(layerView)
             self.view.addSubview(layerView)
         }
     }
@@ -56,6 +58,16 @@ class ViewController: UIViewController {
         return UIColor(red: mix(r1,p2: r2), green: mix(g1,p2: g2), blue: mix(b1,p2: b2), alpha: mix(a1,p2: a2))
     }
     
+   
     
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesMoved(touches, withEvent: event)
+        let touchEvent = touches.first!
+        
+        let point = touchEvent.locationInView(self.view)
+        for layer in layers {
+            layer.moveHoleCenterTo(point)
+        }
+    }
 }
 
