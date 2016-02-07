@@ -36,7 +36,7 @@ class LayerView: UIView {
     
     
     
-    func setup(image image: UIImage, holeRadius: CGFloat) {
+    func setup(image image: UIImage, holeRadius: CGFloat, openHole: Bool) {
         
         self.holeRadius = holeRadius
         
@@ -44,17 +44,15 @@ class LayerView: UIView {
         imageLayer.contents = image.CGImage
         imageLayer.frame = self.bounds
         imageLayer.contentsGravity = kCAGravityResizeAspect
-        
+
         maskLayer = CAShapeLayer()
         maskLayer?.fillRule = kCAFillRuleEvenOdd
         maskLayer?.fillColor = UIColor.blackColor().CGColor
-        
-        moveHoleCenterTo(self.center)
-        
+
+        openHole ? moveHoleCenterTo(self.center) : closeHole()
         imageLayer.mask = maskLayer
-        
+
         self.layer.addSublayer(imageLayer)
-        
     }
 
     
@@ -67,5 +65,10 @@ class LayerView: UIView {
         let path = UIBezierPath(arcCenter: point, radius: holeRadius, startAngle: 0.0, endAngle: CGFloat(2.0*M_PI), clockwise: true)
         path.appendPath(UIBezierPath(rect: self.bounds))
         maskLayer?.path = path.CGPath
+   }
+    
+    func closeHole() {
+        maskLayer?.path = UIBezierPath(rect: self.bounds).CGPath
     }
+    
 }

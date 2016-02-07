@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
 
     var layers = [LayerView]()
-    let countSlot = 10
+    let countSlot = 18
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -30,8 +30,12 @@ class ViewController: UIViewController {
         for i in 0..<countSlot {
             let layerView = LayerView()
             layerView.frame = self.view.bounds
-            layerView.setup(image: UIImage(named: String(i))!, holeRadius:  CGFloat(i) * 10)
+//            layerView.setup(image: UIImage(named: String(i))!, holeRadius:  CGFloat(i) * 10)
 //            layerView.setup(calculateGradient(Double(i)/Double(countSlot)), holeRadius: CGFloat(i) * 10)
+            
+            let number = i * 2
+            let name = "IMG_0457" + ( number < 10 ? "0\(number)" : "\(number)")
+            layerView.setup(image: UIImage(named: String(name))!, holeRadius: CGFloat(i) * 10, openHole: false)
             layers.append(layerView)
             self.view.addSubview(layerView)
         }
@@ -60,6 +64,17 @@ class ViewController: UIViewController {
     }
     
    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        let touchEvent = touches.first!
+        
+        let point = touchEvent.locationInView(self.view)
+        for layer in layers {
+            layer.moveHoleCenterTo(point)
+        }
+
+    }
+    
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
@@ -68,6 +83,14 @@ class ViewController: UIViewController {
         let point = touchEvent.locationInView(self.view)
         for layer in layers {
             layer.moveHoleCenterTo(point)
+        }
+    }
+    
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesEnded(touches, withEvent: event)
+        for layer in layers {
+            layer.closeHole()
         }
     }
 }
