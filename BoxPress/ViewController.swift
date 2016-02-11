@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
 
     var layers = [LayerView]()
-    let countSlot = 18
+    let countSlot = 36
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -33,9 +33,12 @@ class ViewController: UIViewController {
 //            layerView.setup(image: UIImage(named: String(i))!, holeRadius:  CGFloat(i) * 10)
 //            layerView.setup(calculateGradient(Double(i)/Double(countSlot)), holeRadius: CGFloat(i) * 10)
             
-            let number = i * 2
-            let name = "IMG_0457" + ( number < 10 ? "0\(number)" : "\(number)")
-            layerView.setup(image: UIImage(named: String(name))!, holeRadius: CGFloat(i) * 10, openHole: false)
+            let number = i
+            let name = "IMG_0457" + (number < 10 ? "0\(number)" : "\(number)")
+//            let name = "IMG_0468" + (number < 10 ? "0\(number)" : "\(number)")
+//            let name = "IMG_0460" + (number < 10 ? "0\(number)" : "\(number)")
+            
+            layerView.setup(image: UIImage(named: String(name))!, holeRadius: CGFloat(i) * 5, openHole: false)
             layers.append(layerView)
             self.view.addSubview(layerView)
         }
