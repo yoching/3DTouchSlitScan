@@ -35,8 +35,8 @@ class ViewController: UIViewController {
 //            layerView.setup(calculateGradient(Double(i)/Double(countSlot)), holeRadius: CGFloat(i) * 10)
             
             let number = i
-            let name = "IMG_0457" + (number < 10 ? "0\(number)" : "\(number)")
-//            let name = "IMG_0468" + (number < 10 ? "0\(number)" : "\(number)")
+//            let name = "IMG_0457" + (number < 10 ? "0\(number)" : "\(number)")
+            let name = "IMG_0468" + (number < 10 ? "0\(number)" : "\(number)")
 //            let name = "IMG_0460" + (number < 10 ? "0\(number)" : "\(number)")
             
             layerView.setup(image: UIImage(named: String(name))!)
