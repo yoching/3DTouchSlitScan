@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
     var layers = [LayerView]()
     let countSlot = 36
+    let holeRadiusTimes:CGFloat = 5
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
 //            let name = "IMG_0468" + (number < 10 ? "0\(number)" : "\(number)")
 //            let name = "IMG_0460" + (number < 10 ? "0\(number)" : "\(number)")
             
-            layerView.setup(image: UIImage(named: String(name))!, holeRadius: CGFloat(i) * 5, openHole: false)
+            layerView.setup(image: UIImage(named: String(name))!)
             layers.append(layerView)
             self.view.addSubview(layerView)
         }
@@ -67,28 +68,18 @@ class ViewController: UIViewController {
     }
     
    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        let touchEvent = touches.first!
-        
-        let point = touchEvent.locationInView(self.view)
-        for layer in layers {
-            layer.moveHoleCenterTo(point)
-        }
-
-    }
-    
-    
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
         let touchEvent = touches.first!
         
         let point = touchEvent.locationInView(self.view)
-        for layer in layers {
-            layer.moveHoleCenterTo(point)
+        
+        let slotsToOpenCount = Int(floor((touchEvent.force / touchEvent.maximumPossibleForce) * CGFloat(countSlot-1)))
+        for i in (countSlot-slotsToOpenCount)..<countSlot {
+            let radius = CGFloat(i - (countSlot-slotsToOpenCount) + 1) * holeRadiusTimes
+            layers[i].openHole(center: point, radius: radius)
         }
     }
-    
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
