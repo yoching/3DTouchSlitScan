@@ -14,14 +14,23 @@ class SelectVC: UIViewController {
 
 enum PhotoKind: Int {
     case FrontBack = 0
-    case PanFace = 1
-    case RightLeft = 2
-    case Rolling = 3
-    case UpDown = 4
-    case WaveHands = 5
+    case PanFace
+    case RightLeft
+    case Rolling
+    case UpDown
+    case WaveHands
+    case iPhoneLock
+    case openPhoto
+    case mapreal
+    case calendar
+    case camera
+    case compass
+    case mapflat
+    case notificationCenter
+    case phone
     
     static var count: Int {
-        return 6
+        return 15
     }
     
     var fileName: String {
@@ -38,6 +47,24 @@ enum PhotoKind: Int {
             return "updown"
         case .WaveHands:
             return "wavehands"
+        case .iPhoneLock:
+            return "lock"
+        case .openPhoto:
+            return "openPhoto"
+        case .mapreal:
+            return "mapreal"
+        case .calendar:
+            return "calendar"
+        case .camera:
+            return "camera"
+        case .compass:
+            return "compass"
+        case .mapflat:
+            return "flatmap"
+        case .notificationCenter:
+            return "notificationCenter"
+        case .phone:
+            return "phone"
         }
     }
     
@@ -55,6 +82,24 @@ enum PhotoKind: Int {
             return "Up-Down"
         case .WaveHands:
             return "Hand Waving"
+        case .iPhoneLock:
+            return "iPhone Lock"
+        case .openPhoto:
+            return "iPhone open photo"
+        case .mapreal:
+            return "3d map"
+        case .calendar:
+            return "calendar"
+        case .camera:
+            return "camera"
+        case .compass:
+            return "compass"
+        case .mapflat:
+            return "flatmap"
+        case .notificationCenter:
+            return "notificationCenter"
+        case .phone:
+            return "phone"
         }
     }
     
