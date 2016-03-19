@@ -50,7 +50,15 @@ class PhotoVC: UIViewController {
             //            let name = "updown" + lowerName
             let name = photoKind.fileName + lowerName
             
-            layerView.setup(image: UIImage(named: String(name))!)
+            switch photoKind.orientation {
+            case .Vertical:
+                layerView.setup(image: UIImage(named: String(name))!)
+                
+            case .Horizontal:
+                let originalImage = UIImage(named: String(name))!
+                layerView.setup(image: originalImage.imageRotatedByDegrees(90, flip: false))
+            }
+            
             layers.append(layerView)
             self.view.insertSubview(layerView, belowSubview: backButton)
         }

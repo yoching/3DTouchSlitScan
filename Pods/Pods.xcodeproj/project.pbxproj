@@ -6,43 +6,137 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AB912A436639A0CDE6A3E4244DA8505C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD548D0C5745B428FF2ADA0B204AE2B /* Foundation.framework */; };
+		C21670AC704E1D7E0A85D0E437DD6EB3 /* Pods-BoxPress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA58D2066C76C97344D436624F5939A /* Pods-BoxPress-dummy.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		12DFEEB3509D877B6CE65BCE2EEB0562 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "Reveal-Framework-iOS-1.6.2/Reveal.framework"; sourceTree = "<group>"; };
+		5D28FFCAC4B7B476B03C833782A03EF3 /* Pods-BoxPress-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BoxPress-resources.sh"; sourceTree = "<group>"; };
+		88EC322928F16876E4977D33C021C3F6 /* libPods-BoxPress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoxPress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FD548D0C5745B428FF2ADA0B204AE2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9615BBAEA950E9D3A8F074B78746222D /* Pods-BoxPress-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BoxPress-acknowledgements.plist"; sourceTree = "<group>"; };
+		B221676EA210ED474AB965EF35A2A6C3 /* Pods-BoxPress-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BoxPress-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C338A42F458B0D7A70719AC795DCEEFC /* Pods-BoxPress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BoxPress.release.xcconfig"; sourceTree = "<group>"; };
+		CFA58D2066C76C97344D436624F5939A /* Pods-BoxPress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BoxPress-dummy.m"; sourceTree = "<group>"; };
+		FDA99264E41D599EEA777E4CA4897640 /* Pods-BoxPress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BoxPress.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		D9FAD3E672C6667367D19FBE4F81F51D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB912A436639A0CDE6A3E4244DA8505C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
-		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+		174EA45E6EB835591EB7E059A95C49C2 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				56B4A6A92435306ECE1B284BC41ADDB0 /* Pods-BoxPress */,
 			);
-			name = Frameworks;
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8FD548D0C5745B428FF2ADA0B204AE2B /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		56B4A6A92435306ECE1B284BC41ADDB0 /* Pods-BoxPress */ = {
+			isa = PBXGroup;
+			children = (
+				B221676EA210ED474AB965EF35A2A6C3 /* Pods-BoxPress-acknowledgements.markdown */,
+				9615BBAEA950E9D3A8F074B78746222D /* Pods-BoxPress-acknowledgements.plist */,
+				CFA58D2066C76C97344D436624F5939A /* Pods-BoxPress-dummy.m */,
+				5D28FFCAC4B7B476B03C833782A03EF3 /* Pods-BoxPress-resources.sh */,
+				FDA99264E41D599EEA777E4CA4897640 /* Pods-BoxPress.debug.xcconfig */,
+				C338A42F458B0D7A70719AC795DCEEFC /* Pods-BoxPress.release.xcconfig */,
+			);
+			name = "Pods-BoxPress";
+			path = "Target Support Files/Pods-BoxPress";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C6FF86527080A6ABFC16B69A3DC0DFFB /* Pods */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				F6CCA5D896907CE7506C37FD31FC265A /* Targets Support Files */,
+				174EA45E6EB835591EB7E059A95C49C2 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		81C689C3AFC1C7FF242CFAB8DDD09E4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12DFEEB3509D877B6CE65BCE2EEB0562 /* Reveal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6FF86527080A6ABFC16B69A3DC0DFFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D70BEE20B57C04A4512260E625802768 /* Reveal-iOS-SDK */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				88EC322928F16876E4977D33C021C3F6 /* libPods-BoxPress.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F6CCA5D896907CE7506C37FD31FC265A /* Targets Support Files */ = {
+		D70BEE20B57C04A4512260E625802768 /* Reveal-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				81C689C3AFC1C7FF242CFAB8DDD09E4A /* Frameworks */,
 			);
-			name = "Targets Support Files";
+			path = "Reveal-iOS-SDK";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E64969E91E70AFDCC3E9E21CEFBFC5A3 /* Pods-BoxPress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70EDEFA7386A7C502430BCEA9163D42 /* Build configuration list for PBXNativeTarget "Pods-BoxPress" */;
+			buildPhases = (
+				4A0BE9863B14103FE970DA5777956044 /* Sources */,
+				D9FAD3E672C6667367D19FBE4F81F51D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BoxPress";
+			productName = "Pods-BoxPress";
+			productReference = 88EC322928F16876E4977D33C021C3F6 /* libPods-BoxPress.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
@@ -63,11 +157,55 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E64969E91E70AFDCC3E9E21CEFBFC5A3 /* Pods-BoxPress */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXSourcesBuildPhase section */
+		4A0BE9863B14103FE970DA5777956044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21670AC704E1D7E0A85D0E437DD6EB3 /* Pods-BoxPress-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
 /* Begin XCBuildConfiguration section */
+		03D242518670A9EA74017D8FE627A23B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C338A42F458B0D7A70719AC795DCEEFC /* Pods-BoxPress.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4783707DC952B090549B983812596720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDA99264E41D599EEA777E4CA4897640 /* Pods-BoxPress.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		8D1534490D941DCA47C62AC4314182AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -149,6 +287,15 @@
 			buildConfigurations = (
 				8D1534490D941DCA47C62AC4314182AF /* Debug */,
 				C5A18280E9321A9268D1C80B7DA43967 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70EDEFA7386A7C502430BCEA9163D42 /* Build configuration list for PBXNativeTarget "Pods-BoxPress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4783707DC952B090549B983812596720 /* Debug */,
+				03D242518670A9EA74017D8FE627A23B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
