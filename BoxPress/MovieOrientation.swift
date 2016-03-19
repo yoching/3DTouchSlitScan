@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PhotoOrientation {
+enum MovieOrientation {
     case Horizontal
     case Vertical
 }

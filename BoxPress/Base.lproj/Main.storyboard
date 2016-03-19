@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iT7-Sk-EU6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iT7-Sk-EU6">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-429" y="-57"/>
         </scene>
-        <!--SelectVC-->
+        <!--Movies View Controller-->
         <scene sceneID="VVB-j9-PKr">
             <objects>
-                <viewController id="WjC-RP-Qn9" customClass="SelectVC" customModule="BoxPress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WjC-RP-Qn9" customClass="MoviesViewController" customModule="BoxPress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AXv-L4-4DG"/>
                         <viewControllerLayoutGuide type="bottom" id="ZFO-3c-lLv"/>
@@ -56,10 +56,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="WjC-RP-Qn9" id="hHX-Dg-jhf"/>
-                                    <outlet property="delegate" destination="WjC-RP-Qn9" id="3kM-LY-nfC"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,6 +67,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Y7n-og-4pZ"/>
+                    <connections>
+                        <outlet property="moviesTableView" destination="FqL-Bv-nWF" id="dMd-Zz-tL4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB0-5N-Vze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,8 +14,7 @@ class PhotoVC: UIViewController {
     let countSlot = 72
     let holeRadiusTimes:CGFloat = 5
     
-    var photoKind: PhotoKind?
-    
+    var movie: Movie!
     
     @IBOutlet weak var backButton: UIButton!
     @IBAction func backDidTap(sender: AnyObject) {
@@ -25,17 +24,20 @@ class PhotoVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard let photoKind = photoKind else {
-            return
-        }
-        
         for i in 0..<countSlot {
             let layerView = LayerView()
             layerView.frame = self.view.bounds
             //            layerView.setup(image: UIImage(named: String(i))!, holeRadius:  CGFloat(i) * 10)
             //            layerView.setup(calculateGradient(Double(i)/Double(countSlot)), holeRadius: CGFloat(i) * 10)
             
-            let number = photoKind.reverse ? i : (countSlot - 1 - i)
+            let number: Int
+            switch movie.frameOrder {
+            case .Descending:
+                number = i
+            case .Ascending:
+                number = countSlot - 1 - i
+            }
+            
             let lowerName: String
             if number < 10 {
                 lowerName = "0\(number)"
@@ -48,9 +50,9 @@ class PhotoVC: UIViewController {
             //            let name = "IMG_0468" + (number < 10 ? "0\(number)" : "\(number)")
             //            let name = "IMG_0460" + (number < 10 ? "0\(number)" : "\(number)")
             //            let name = "updown" + lowerName
-            let name = photoKind.fileName + lowerName
+            let name = movie.frameImageFileNamePrefix + lowerName
             
-            switch photoKind.orientation {
+            switch movie.orientation {
             case .Vertical:
                 layerView.setup(image: UIImage(named: String(name))!)
                 
