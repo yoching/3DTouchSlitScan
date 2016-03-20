@@ -40,6 +40,12 @@ extension Movie {
         Movie(title: "notificationCenter", frameImageFileNamePrefix: "notificationCenter"),
         Movie(title: "phone", frameImageFileNamePrefix: "phone"),
         Movie(title: "paper", frameImageFileNamePrefix: "paper"),
-        Movie(title: "write on paper", frameImageFileNamePrefix: "paper_write", orientation: .Horizontal)
+        Movie(title: "write on paper", frameImageFileNamePrefix: "paper_write"),
+        Movie(title: "paper_write_crash", frameImageFileNamePrefix: "paper_write_crash"),
+        Movie(title: "babystar", frameImageFileNamePrefix: "babystar"),
+        Movie(title: "books", frameImageFileNamePrefix: "books"),
+        Movie(title: "bottle_lay", frameImageFileNamePrefix: "bottle_lay"),
+         Movie(title: "bottle_rolling", frameImageFileNamePrefix: "bottle_rolling"),
+         Movie(title: "water", frameImageFileNamePrefix: "water")
     ]
 }
