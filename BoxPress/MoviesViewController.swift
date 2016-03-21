@@ -29,8 +29,8 @@ extension MoviesViewController: UITableViewDelegate {
             return
         }
 
-        let photoViewController = PhotoVC.instantiate()
-        photoViewController.movie = movie
-        self.showViewController(photoViewController, sender: self)
+        let movieViewController = MovieViewController.instantiate()
+        movieViewController.movieViewViewModel = MovieViewViewModel(movie: movie)
+        self.showViewController(movieViewController, sender: self)
     }
 }

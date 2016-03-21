@@ -13,6 +13,7 @@ struct Movie {
     let frameImageFileNamePrefix: String
     let frameOrder: MovieFrameOrder
     let orientation: MovieOrientation
+    let numberOfFrames = 72
     
     init(title: String, frameImageFileNamePrefix: String, frameOrder: MovieFrameOrder = .Ascending, orientation: MovieOrientation = .Vertical) {
         self.title = title
