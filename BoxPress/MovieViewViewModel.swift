@@ -9,8 +9,7 @@
 import UIKit
 
 protocol MovieViewViewModelType {
-    var numberOfFrames: Int { get }
-    func frameImageAtIndex(index: Int) -> UIImage?
+    var frameImages: [CGImage]? { get }
 }
 
 struct MovieViewViewModel: MovieViewViewModelType {
@@ -21,11 +20,18 @@ struct MovieViewViewModel: MovieViewViewModelType {
         self.movie = movie
     }
     
-    var numberOfFrames: Int {
-        return movie.numberOfFrames
+    var frameImages: [CGImage]? {
+        var frameImages = [CGImage]()
+        for frameIndex in 0..<movie.numberOfFrames {
+            guard let frameImage = frameImageAtIndex(frameIndex)?.CGImage else {
+                return nil
+            }
+            frameImages.append(frameImage)
+        }
+        return frameImages
     }
     
-    func frameImageAtIndex(index: Int) -> UIImage? {
+    private func frameImageAtIndex(index: Int) -> UIImage? {
         
         let frameIndex: Int
         switch movie.frameOrder {

@@ -25,17 +25,17 @@ class MovieViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        for index in 0..<movieViewViewModel.numberOfFrames {
-            
-            guard let image = movieViewViewModel.frameImageAtIndex(index)?.CGImage else {
-                continue
-            }
+        guard let images = movieViewViewModel.frameImages else {
+            return
+        }
 
+        for image in images {
+            
             let imageLayer = CALayer(image: image, frame: movieView.bounds)
             
             let maskLayer = ImageMaskLayer(frame: movieView.bounds)
             imageLayer.mask = maskLayer
-
+            
             movieView.layer.addSublayer(imageLayer)
             imageMaskLayers.append(maskLayer)
         }
@@ -44,13 +44,18 @@ class MovieViewController: UIViewController {
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
+        
+        guard let images = movieViewViewModel.frameImages else {
+            return
+        }
+        
         let touchEvent = touches.first!
         
         let point = touchEvent.locationInView(self.view)
         
-        let slotsToOpenCount = Int(floor((touchEvent.force / touchEvent.maximumPossibleForce) * CGFloat(movieViewViewModel.numberOfFrames-1)))
-        for i in (movieViewViewModel.numberOfFrames-slotsToOpenCount)..<movieViewViewModel.numberOfFrames {
-            let radius = CGFloat(i - (movieViewViewModel.numberOfFrames-slotsToOpenCount) + 1) * holeRadiusTimes
+        let slotsToOpenCount = Int(floor((touchEvent.force / touchEvent.maximumPossibleForce) * CGFloat(images.count-1)))
+        for i in (images.count-slotsToOpenCount)..<images.count {
+            let radius = CGFloat(i - (images.count-slotsToOpenCount) + 1) * holeRadiusTimes
             imageMaskLayers[i].openHole(center: point, radius: radius)
         }
     }
