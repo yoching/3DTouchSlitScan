@@ -8,27 +8,27 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController {
+class MoviesViewController: UIViewController, StoryboardInstantiable {
    
-    @IBOutlet weak var moviesTableView: UITableView!
+    @IBOutlet weak var moviesCollectionView: UICollectionView!
     
-    let moviesTableViewDataSource = MoviesTableViewDataSource()
+    var moviesColletionViewDataSource: MoviesCollectionViewDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        moviesTableView.dataSource = moviesTableViewDataSource
-        moviesTableView.delegate = self
+        moviesCollectionView.dataSource = moviesColletionViewDataSource
+        moviesCollectionView.delegate = self
     }
     
 }
 
-extension MoviesViewController: UITableViewDelegate {
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+extension MoviesViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        guard let movie = moviesTableViewDataSource.movieAtIndexPath(indexPath) else {
+        guard let movie = moviesColletionViewDataSource.movieAtIndexPath(indexPath) else {
             return
         }
-
+        
         let movieViewController = MovieViewController.instantiate()
         movieViewController.movieViewViewModel = MovieViewViewModel(movie: movie)
         self.showViewController(movieViewController, sender: self)

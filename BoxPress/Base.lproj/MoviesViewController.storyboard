@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WjC-RP-Qn9">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Movies View Controller-->
+        <scene sceneID="VVB-j9-PKr">
+            <objects>
+                <viewController id="WjC-RP-Qn9" customClass="MoviesViewController" customModule="BoxPress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AXv-L4-4DG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZFO-3c-lLv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RfU-QL-IOD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T0U-s7-OFV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LDM-vN-D7e">
+                                    <size key="itemSize" width="187" height="333"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="Wy3-dG-pZr" customClass="MovieCell" customModule="BoxPress" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="333"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="333"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rd8-f3-I2Y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Rd8-f3-I2Y" secondAttribute="trailing" id="951-OE-HDM"/>
+                                            <constraint firstItem="Rd8-f3-I2Y" firstAttribute="leading" secondItem="Wy3-dG-pZr" secondAttribute="leading" id="iLw-Nw-vj3"/>
+                                            <constraint firstItem="Rd8-f3-I2Y" firstAttribute="top" secondItem="Wy3-dG-pZr" secondAttribute="top" id="pnk-2Q-Kyf"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rd8-f3-I2Y" secondAttribute="bottom" id="vXa-X5-7wd"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="thumbnailImageView" destination="Rd8-f3-I2Y" id="UBd-xk-hMx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T0U-s7-OFV" firstAttribute="top" secondItem="RfU-QL-IOD" secondAttribute="top" id="DE9-Kp-fGH"/>
+                            <constraint firstAttribute="trailing" secondItem="T0U-s7-OFV" secondAttribute="trailing" id="E09-Fs-Bw2"/>
+                            <constraint firstItem="ZFO-3c-lLv" firstAttribute="top" secondItem="T0U-s7-OFV" secondAttribute="bottom" id="bPE-bH-UeA"/>
+                            <constraint firstItem="T0U-s7-OFV" firstAttribute="leading" secondItem="RfU-QL-IOD" secondAttribute="leading" id="f8x-1t-uki"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y7n-og-4pZ"/>
+                    <connections>
+                        <outlet property="moviesCollectionView" destination="T0U-s7-OFV" id="ALu-C4-2qs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xB0-5N-Vze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250" y="-57"/>
+        </scene>
+    </scenes>
+</document>

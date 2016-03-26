@@ -15,7 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let movies = Movie.movies
+        let movieCellViewModels = movies.map({ (movie: Movie) -> MovieCellViewModel in
+            return MovieCellViewModel(movie: movie)
+        })
+        
+        let moviesViewController = MoviesViewController.instantiate()
+        moviesViewController.moviesColletionViewDataSource = MoviesCollectionViewDataSource(movieCellViewModels: movieCellViewModels)
+        
+        let navigationController = UINavigationController(rootViewController: moviesViewController)
+        navigationController.navigationBarHidden = true
+        
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 

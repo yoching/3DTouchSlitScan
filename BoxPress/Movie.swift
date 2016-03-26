@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Movie {
+struct Movie: FrameExportableMovieType {
     let title: String
     let frameImageFileNamePrefix: String
     let frameOrder: MovieFrameOrder
@@ -21,6 +21,7 @@ struct Movie {
         self.frameOrder = frameOrder
         self.orientation = orientation
     }
+
 }
 
 extension Movie {
