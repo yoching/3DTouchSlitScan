@@ -34,3 +34,11 @@ extension MoviesViewController: UICollectionViewDelegate {
         self.showViewController(movieViewController, sender: self)
     }
 }
+
+extension MoviesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width = (UIScreen.mainScreen().bounds.width - 2) / 3
+        let height = width * Movie.height / Movie.width
+        return CGSize(width: width, height: height)
+    }
+}

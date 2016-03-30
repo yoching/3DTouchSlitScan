@@ -25,6 +25,11 @@ struct Movie: FrameExportableMovieType {
 }
 
 extension Movie {
+    static let width: CGFloat = 375
+    static let height: CGFloat = 667
+}
+
+extension Movie {
     static let movies = [
         Movie(title: "Front-Back", frameImageFileNamePrefix: "frontback"),
         Movie(title: "Face Panning", frameImageFileNamePrefix: "IMG_0457"),
