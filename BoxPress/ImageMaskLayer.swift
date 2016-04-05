@@ -46,4 +46,5 @@ class ImageMaskLayer: CAShapeLayer, ImageMaskLayerType {
     func closeHole() {
         path = UIBezierPath(rect: bounds).CGPath
     }
+    
 }

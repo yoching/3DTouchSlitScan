@@ -9,26 +9,43 @@
 import UIKit
 
 protocol MovieViewViewModelType {
-    var frameImages: [CGImage]? { get }
+    var layerViewModels: [MovieFrameLayerViewModel] { get }
+    
+    func onTouchMoved(point: CGPoint, normalizedForce: CGFloat)
+    func onTouchEnded()
 }
 
 struct MovieViewViewModel: MovieViewViewModelType {
     
-    private var movie: FrameExportableMovieType
+    let layerViewModels: [MovieFrameLayerViewModel]
     
-    init(movie: FrameExportableMovieType) {
-        self.movie = movie
-    }
-    
-    var frameImages: [CGImage]? {
-        var frameImages = [CGImage]()
+    init?(movie: FrameExportableMovieType) {
+        var _layerViewModels = [MovieFrameLayerViewModel]()
         for frameIndex in 0..<movie.numberOfFrames {
             guard let frameImage = movie.frameImageAtIndex(frameIndex)?.CGImage else {
                 return nil
             }
-            frameImages.append(frameImage)
+            _layerViewModels.append(MovieFrameLayerViewModel(image: frameImage, hole: nil))
         }
-        return frameImages
+        layerViewModels = _layerViewModels
+    }
+
+    private var countLayers: Int {
+        return layerViewModels.count
+    }
+    
+    func onTouchMoved(point: CGPoint, normalizedForce: CGFloat) {
+        let slotsToOpenCount = Int(floor(normalizedForce * CGFloat(countLayers-1)))
+        for i in (countLayers-slotsToOpenCount)..<countLayers {
+            let radius = CGFloat(i - (countLayers-slotsToOpenCount) + 1) * Hole.minimumRadiusDifference
+            layerViewModels[i].hole = Hole(center: point, radius: radius)
+        }
+    }
+    
+    func onTouchEnded() {
+        for layerViewModel in layerViewModels {
+            layerViewModel.hole = nil
+        }
     }
     
 }

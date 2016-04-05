@@ -12,9 +12,7 @@ class MovieViewController: UIViewController {
     
     var movieViewViewModel: MovieViewViewModelType!
 
-    var imageMaskLayers = [ImageMaskLayer]()
-    
-    let holeRadiusTimes:CGFloat = 5
+    var movieFrameLayers = [MovieFrameLayer]()
     
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var backButton: UIButton!
@@ -22,49 +20,32 @@ class MovieViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        guard let images = movieViewViewModel.frameImages else {
-            return
-        }
-
-        for image in images {
-            
-            let imageLayer = CALayer(image: image, frame: movieView.bounds)
-            
-            let maskLayer = ImageMaskLayer(frame: movieView.bounds)
-            imageLayer.mask = maskLayer
-            
-            movieView.layer.addSublayer(imageLayer)
-            imageMaskLayers.append(maskLayer)
+        for layerViewModel in movieViewViewModel.layerViewModels {
+            let movieFrameLayer = MovieFrameLayer(viewModel: layerViewModel, frame: UIScreen.mainScreen().bounds)
+            movieView.layer.addSublayer(movieFrameLayer.imageLayer)
+            movieFrameLayers.append(movieFrameLayer)
         }
     }
     
-    
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        
-        guard let images = movieViewViewModel.frameImages else {
+
+        guard UIScreen.mainScreen().traitCollection.forceTouchCapability == .Available else {
             return
         }
         
         let touchEvent = touches.first!
         
         let point = touchEvent.locationInView(self.view)
-        
-        let slotsToOpenCount = Int(floor((touchEvent.force / touchEvent.maximumPossibleForce) * CGFloat(images.count-1)))
-        for i in (images.count-slotsToOpenCount)..<images.count {
-            let radius = CGFloat(i - (images.count-slotsToOpenCount) + 1) * holeRadiusTimes
-            imageMaskLayers[i].openHole(center: point, radius: radius)
-        }
+        movieViewViewModel.onTouchMoved(point, normalizedForce: touchEvent.force / touchEvent.maximumPossibleForce)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
-        for layer in imageMaskLayers {
-            layer.closeHole()
-        }
+        movieViewViewModel.onTouchEnded()
     }
 
 }
