@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Movie View Controller-->
+        <!--Movie View Controller For3D Touch-->
         <scene sceneID="37F-wk-NJj">
             <objects>
-                <viewController id="jVN-6H-YtI" customClass="MovieViewController" customModule="BoxPress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jVN-6H-YtI" customClass="MovieViewControllerFor3DTouch" customModule="BoxPress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gVN-89-Jx8"/>
                         <viewControllerLayoutGuide type="bottom" id="5al-tM-J1v"/>

@@ -30,24 +30,9 @@ class MovieViewController: UIViewController {
         }
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
-
-        guard UIScreen.mainScreen().traitCollection.forceTouchCapability == .Available else {
-            return
-        }
-        
-        let touchEvent = touches.first!
-        
-        let point = touchEvent.locationInView(self.view)
-        movieViewViewModel.onTouchMoved(point, normalizedForce: touchEvent.force / touchEvent.maximumPossibleForce)
-    }
-    
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         movieViewViewModel.onTouchEnded()
     }
 
 }
-
-extension MovieViewController: StoryboardInstantiable {}

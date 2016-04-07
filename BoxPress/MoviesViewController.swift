@@ -29,8 +29,8 @@ extension MoviesViewController: UICollectionViewDelegate {
             return
         }
         
-        let movieViewController = MovieViewController.instantiate()
-        movieViewController.movieViewViewModel = MovieViewViewModel(movie: movie)
+        let movieViewController = MovieViewControllerFor3DTouch.instantiate()
+        movieViewController.movieViewViewModel = MovieViewFor3DTouchViewModel(movie: movie)
         self.showViewController(movieViewController, sender: self)
     }
 }
