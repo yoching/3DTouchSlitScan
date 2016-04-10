@@ -20,11 +20,10 @@ struct MovieViewFor3DTouchViewModel: MovieViewViewModelType {
     }
     
     func onTouchMoved(point: CGPoint, normalizedForce: CGFloat) {
-        let slotsToOpenCount = Int(floor(normalizedForce * CGFloat(countLayers-1)))
-        for i in (countLayers-slotsToOpenCount)..<countLayers {
-            let radius = CGFloat(i - (countLayers-slotsToOpenCount) + 1) * Hole.minimumRadiusDifference
-            layerViewModels[i].hole = Hole(center: point, radius: radius)
-        }
+        openHole(point: point, depth: normalizedForce)
     }
     
+    func onTouchEnded() {
+        closeHole()
+    }
 }

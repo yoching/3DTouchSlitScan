@@ -28,9 +28,15 @@ extension MoviesViewController: UICollectionViewDelegate {
         guard let movie = moviesColletionViewDataSource.movieAtIndexPath(indexPath) else {
             return
         }
-        
-        let movieViewController = MovieViewControllerFor3DTouch.instantiate()
-        movieViewController.movieViewViewModel = MovieViewFor3DTouchViewModel(movie: movie)
+
+        let movieViewController: MovieViewController
+        if UIScreen.mainScreen().traitCollection.forceTouchCapability == .Available {
+            movieViewController = MovieViewControllerFor3DTouch.instantiate()
+            movieViewController.movieViewViewModel = MovieViewFor3DTouchViewModel(movie: movie)
+        } else {
+            movieViewController = MovieViewControllerForNon3DTouch.instantiate()
+            movieViewController.movieViewViewModel = MovieViewForNon3DTouchViewModel(movie: movie)
+        }
         self.showViewController(movieViewController, sender: self)
     }
 }

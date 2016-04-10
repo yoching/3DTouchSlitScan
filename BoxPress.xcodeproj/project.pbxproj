@@ -11,6 +11,9 @@
 		E31C480A1C6F924B00520AE1 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C48091C6F924B00520AE1 /* StoryboardInstantiable.swift */; };
 		E31C480D1C6F93F000520AE1 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C480C1C6F93F000520AE1 /* MovieViewController.swift */; };
 		E31C480F1C6F941000520AE1 /* MovieViewControllerFor3DTouch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31C480E1C6F941000520AE1 /* MovieViewControllerFor3DTouch.storyboard */; };
+		E3396F041CB6263E001312CD /* MovieViewControllerForNon3DTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3396F031CB6263E001312CD /* MovieViewControllerForNon3DTouch.swift */; };
+		E3396F061CB6266E001312CD /* MovieViewForNon3DTouchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3396F051CB6266E001312CD /* MovieViewForNon3DTouchViewModel.swift */; };
+		E3396F081CB626C2001312CD /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3396F071CB626C2001312CD /* Stopwatch.swift */; };
 		E34E134F1C99A06100BA16B6 /* MovieOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E134E1C99A06100BA16B6 /* MovieOrientation.swift */; };
 		E34E13531C99AC5100BA16B6 /* UIImage+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E13521C99AC5100BA16B6 /* UIImage+Rotation.swift */; };
 		E354290B1CA65017005837F9 /* MoviesCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E354290A1CA65017005837F9 /* MoviesCollectionViewDataSource.swift */; };
@@ -27,6 +30,7 @@
 		E3735E881C65EB4300EB262A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3735E861C65EB4300EB262A /* LaunchScreen.storyboard */; };
 		E3735E931C65EB4300EB262A /* BoxPressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3735E921C65EB4300EB262A /* BoxPressTests.swift */; };
 		E3735E9E1C65EB4300EB262A /* BoxPressUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3735E9D1C65EB4300EB262A /* BoxPressUITests.swift */; };
+		E3750E311CBA2A6B008CD1FF /* MovieViewControllerForNon3DTouch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3750E301CBA2A6B008CD1FF /* MovieViewControllerForNon3DTouch.storyboard */; };
 		E376C1091CB2AF22000139B2 /* MovieFrameLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376C1081CB2AF22000139B2 /* MovieFrameLayer.swift */; };
 		E37ADA8B1C9D31E000C42055 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37ADA8A1C9D31E000C42055 /* Movie.swift */; };
 		E37ADA8D1C9D324D00C42055 /* MovieFrameOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37ADA8C1C9D324D00C42055 /* MovieFrameOrder.swift */; };
@@ -61,6 +65,9 @@
 		E31C48091C6F924B00520AE1 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		E31C480C1C6F93F000520AE1 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		E31C480E1C6F941000520AE1 /* MovieViewControllerFor3DTouch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MovieViewControllerFor3DTouch.storyboard; sourceTree = "<group>"; };
+		E3396F031CB6263E001312CD /* MovieViewControllerForNon3DTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewControllerForNon3DTouch.swift; sourceTree = "<group>"; };
+		E3396F051CB6266E001312CD /* MovieViewForNon3DTouchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewForNon3DTouchViewModel.swift; sourceTree = "<group>"; };
+		E3396F071CB626C2001312CD /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		E34E134E1C99A06100BA16B6 /* MovieOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieOrientation.swift; sourceTree = "<group>"; };
 		E34E13521C99AC5100BA16B6 /* UIImage+Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotation.swift"; sourceTree = "<group>"; };
 		E354290A1CA65017005837F9 /* MoviesCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -83,6 +90,7 @@
 		E3735E991C65EB4300EB262A /* BoxPressUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoxPressUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3735E9D1C65EB4300EB262A /* BoxPressUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPressUITests.swift; sourceTree = "<group>"; };
 		E3735E9F1C65EB4300EB262A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3750E301CBA2A6B008CD1FF /* MovieViewControllerForNon3DTouch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MovieViewControllerForNon3DTouch.storyboard; sourceTree = "<group>"; };
 		E376C1081CB2AF22000139B2 /* MovieFrameLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieFrameLayer.swift; sourceTree = "<group>"; };
 		E37ADA8A1C9D31E000C42055 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E37ADA8C1C9D324D00C42055 /* MovieFrameOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieFrameOrder.swift; sourceTree = "<group>"; };
@@ -172,6 +180,8 @@
 				E31C480C1C6F93F000520AE1 /* MovieViewController.swift */,
 				E31C480E1C6F941000520AE1 /* MovieViewControllerFor3DTouch.storyboard */,
 				E3D667061CB411DD009080C1 /* MovieViewControllerFor3DTouch.swift */,
+				E3750E301CBA2A6B008CD1FF /* MovieViewControllerForNon3DTouch.storyboard */,
+				E3396F031CB6263E001312CD /* MovieViewControllerForNon3DTouch.swift */,
 				E376C1081CB2AF22000139B2 /* MovieFrameLayer.swift */,
 				E35923B01CA014A300704396 /* ImageMaskLayer.swift */,
 			);
@@ -183,8 +193,10 @@
 			children = (
 				E35923B41CA017AB00704396 /* MovieViewViewModelType.swift */,
 				E3D667081CB41403009080C1 /* MovieViewFor3DTouchViewModel.swift */,
+				E3396F051CB6266E001312CD /* MovieViewForNon3DTouchViewModel.swift */,
 				E383E3D41CACE6ED00B6482D /* MovieFrameLayerViewModel.swift */,
 				E38EA3E21CAC382200A9D34F /* Hole.swift */,
+				E3396F071CB626C2001312CD /* Stopwatch.swift */,
 			);
 			name = MovieView;
 			sourceTree = "<group>";
@@ -396,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3750E311CBA2A6B008CD1FF /* MovieViewControllerForNon3DTouch.storyboard in Resources */,
 				E3735E881C65EB4300EB262A /* LaunchScreen.storyboard in Resources */,
 				E31C480F1C6F941000520AE1 /* MovieViewControllerFor3DTouch.storyboard in Resources */,
 				E3735E851C65EB4300EB262A /* Assets.xcassets in Resources */,
@@ -457,12 +470,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3396F061CB6266E001312CD /* MovieViewForNon3DTouchViewModel.swift in Sources */,
+				E3396F081CB626C2001312CD /* Stopwatch.swift in Sources */,
 				E35429151CA65859005837F9 /* MovieCell.swift in Sources */,
 				E3D667071CB411DD009080C1 /* MovieViewControllerFor3DTouch.swift in Sources */,
 				E38EA3E31CAC382200A9D34F /* Hole.swift in Sources */,
 				E3D667091CB41403009080C1 /* MovieViewFor3DTouchViewModel.swift in Sources */,
 				E35429111CA6555A005837F9 /* MovieType.swift in Sources */,
 				E31C480A1C6F924B00520AE1 /* StoryboardInstantiable.swift in Sources */,
+				E3396F041CB6263E001312CD /* MovieViewControllerForNon3DTouch.swift in Sources */,
 				E37ADA8B1C9D31E000C42055 /* Movie.swift in Sources */,
 				E37ADA8D1C9D324D00C42055 /* MovieFrameOrder.swift in Sources */,
 				E34E13531C99AC5100BA16B6 /* UIImage+Rotation.swift in Sources */,

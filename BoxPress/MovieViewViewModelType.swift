@@ -15,14 +15,6 @@ protocol MovieViewViewModelType {
 
 extension MovieViewViewModelType {
     
-    func onTouchEnded() {
-        layerViewModels.forEach { (layerViewModel) -> () in
-            layerViewModel.hole = nil
-        }
-    }
-    
-    // common methods
-    
     static func setupLayerViewModels(movie: FrameExportableMovieType) -> [MovieFrameLayerViewModel]? {
         var _layerViewModels = [MovieFrameLayerViewModel]()
         for frameIndex in 0..<movie.numberOfFrames {
@@ -38,4 +30,26 @@ extension MovieViewViewModelType {
         return layerViewModels.count
     }
 
+    func openHole(point point: CGPoint, depth: CGFloat) {
+        
+        print("point: \(point), depth: \(depth)")
+        let countHoleOpenLayers = Int(floor(depth * CGFloat(countLayers-1)))
+        
+        layerViewModels.enumerate().forEach { (element: (index: Int, layerViewModel: MovieFrameLayerViewModel)) -> () in
+
+            if element.index < (countLayers - countHoleOpenLayers) {
+                element.layerViewModel.hole = nil
+            } else {
+                let radius = CGFloat(element.index - (countLayers-countHoleOpenLayers) + 1) * Hole.minimumRadiusDifference
+                element.layerViewModel.hole = Hole(center: point, radius: radius)
+            }
+        }
+        
+    }
+    
+    func closeHole() {
+        layerViewModels.forEach { (layerViewModel) -> () in
+            layerViewModel.hole = nil
+        }
+    }
 }
