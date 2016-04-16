@@ -23,7 +23,7 @@ class Stopwatch: NSObject {
     }
     
     func start() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "onTimer:", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: #selector(Stopwatch.onTimer(_:)), userInfo: nil, repeats: true)
     }
 
     func stop() {

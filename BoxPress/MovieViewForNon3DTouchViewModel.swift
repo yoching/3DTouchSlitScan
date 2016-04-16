@@ -10,9 +10,9 @@ import UIKit
 
 class MovieViewForNon3DTouchViewModel: MovieViewViewModelType {
     
-    let maxTimeDuration: CGFloat = 1.0
+    let maxTimeDuration: CGFloat = 2.0
     
-    var layerViewModels: [MovieFrameLayerViewModel] = []
+    var layerViewModels: [MovieFrameLayerViewModel]
     
     private let stopwatch = Stopwatch()
     
@@ -39,8 +39,8 @@ class MovieViewForNon3DTouchViewModel: MovieViewViewModelType {
         }
         layerViewModels = _layerViewModels
         
-        stopwatch.onTimeChanged = { (time: Double) in
-            self.depth = min(CGFloat(time) / self.maxTimeDuration, self.maxTimeDuration)
+        stopwatch.onTimeChanged = { [unowned self] (time: Double) in
+            self.depth = min(CGFloat(time) / self.maxTimeDuration, 1.0)
         }
     }
     
