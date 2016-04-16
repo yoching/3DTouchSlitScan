@@ -52,6 +52,7 @@ class MovieViewForNon3DTouchViewModel: MovieViewViewModelType {
     func onTouchMoved(point: CGPoint) {
         holeCenter = point
         stopwatch.stop()
+        stopwatch.start()
     }
     
     func onTouchEnded() {
