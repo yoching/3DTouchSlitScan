@@ -14,25 +14,25 @@ class MoviesCollectionViewDataSource: NSObject {
         self.movieCellViewModels = movieCellViewModels
     }
     
-    func movieAtIndexPath(indexPath: NSIndexPath) -> Movie? {
-        guard indexPath.row < movieCellViewModels.count else {
+    func movieAtIndexPath(_ indexPath: IndexPath) -> Movie? {
+        guard (indexPath as NSIndexPath).row < movieCellViewModels.count else {
             return nil
         }
-        return movieCellViewModels[indexPath.row].movie
+        return movieCellViewModels[(indexPath as NSIndexPath).row].movie
     }
 }
 
 extension MoviesCollectionViewDataSource: UICollectionViewDataSource {
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieCellViewModels.count
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MovieCell", forIndexPath: indexPath) as? MovieCell else {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as? MovieCell else {
             fatalError("could not dequeue cell")
         }
-        cell.configure(movieCellViewModels[indexPath.row])
+        cell.configure(movieCellViewModels[(indexPath as NSIndexPath).row])
         return cell
     }
 

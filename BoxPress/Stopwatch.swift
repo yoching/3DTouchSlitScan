@@ -10,20 +10,20 @@ import UIKit
 
 class Stopwatch: NSObject {
     
-    private let timeInterval = 0.1
+    fileprivate let timeInterval = 0.1
     
-    var onTimeChanged: (Double -> Void)?
+    var onTimeChanged: ((Double) -> Void)?
     
-    private var timer: NSTimer?
+    fileprivate var timer: Timer?
 
-    private var time: Double = 0.0 {
+    fileprivate var time: Double = 0.0 {
         didSet {
             onTimeChanged?(time)
         }
     }
     
     func start() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: #selector(Stopwatch.onTimer(_:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(Stopwatch.onTimer(_:)), userInfo: nil, repeats: true)
     }
 
     func stop() {
@@ -35,7 +35,7 @@ class Stopwatch: NSObject {
     }
     
     
-    func onTimer(sender: NSTimer) {
+    func onTimer(_ sender: Timer) {
         print("onTimer")
         time += timeInterval
     }

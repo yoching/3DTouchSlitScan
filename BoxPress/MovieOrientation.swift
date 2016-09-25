@@ -9,6 +9,6 @@
 import Foundation
 
 enum MovieOrientation {
-    case Horizontal
-    case Vertical
+    case horizontal
+    case vertical
 }

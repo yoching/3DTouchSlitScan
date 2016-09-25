@@ -10,18 +10,18 @@ import UIKit
 
 class MovieViewControllerForNon3DTouch: MovieViewController, StoryboardInstantiable {
 
-    private var viewModel: MovieViewForNon3DTouchViewModel {
+    fileprivate var viewModel: MovieViewForNon3DTouchViewModel {
         return movieViewViewModel as! MovieViewForNon3DTouchViewModel
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        viewModel.onTouchBegan(touches.first!.locationInView(self.view))
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        viewModel.onTouchBegan(touches.first!.location(in: self.view))
     }
 
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
-        viewModel.onTouchMoved(touches.first!.locationInView(self.view))
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        viewModel.onTouchMoved(touches.first!.location(in: self.view))
     }
 
 }

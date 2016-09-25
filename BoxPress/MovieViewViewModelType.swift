@@ -15,10 +15,10 @@ protocol MovieViewViewModelType {
 
 extension MovieViewViewModelType {
     
-    static func setupLayerViewModels(movie: FrameExportableMovieType) -> [MovieFrameLayerViewModel]? {
+    static func setupLayerViewModels(_ movie: FrameExportableMovieType) -> [MovieFrameLayerViewModel]? {
         var _layerViewModels = [MovieFrameLayerViewModel]()
         for frameIndex in 0..<movie.numberOfFrames {
-            guard let frameImage = movie.frameImageAtIndex(frameIndex)?.CGImage else {
+            guard let frameImage = movie.frameImageAtIndex(frameIndex)?.cgImage else {
                 return nil
             }
             _layerViewModels.append(MovieFrameLayerViewModel(image: frameImage, hole: nil))
@@ -30,12 +30,12 @@ extension MovieViewViewModelType {
         return layerViewModels.count
     }
 
-    func openHole(point point: CGPoint, depth: CGFloat) {
+    func openHole(point: CGPoint, depth: CGFloat) {
         
 //        print("point: \(point), depth: \(depth)")
         let countHoleOpenLayers = Int(floor(depth * CGFloat(countLayers-1)))
         
-        layerViewModels.enumerate().forEach { (element: (index: Int, layerViewModel: MovieFrameLayerViewModel)) -> () in
+        layerViewModels.enumerated().forEach { (element: (index: Int, layerViewModel: MovieFrameLayerViewModel)) -> () in
 
             if element.index < (countLayers - countHoleOpenLayers) {
                 element.layerViewModel.hole = nil

@@ -19,7 +19,7 @@ struct MovieViewFor3DTouchViewModel: MovieViewViewModelType {
         layerViewModels = _layerViewModels
     }
     
-    func onTouchMoved(point: CGPoint, normalizedForce: CGFloat) {
+    func onTouchMoved(_ point: CGPoint, normalizedForce: CGFloat) {
         openHole(point: point, depth: normalizedForce)
     }
     

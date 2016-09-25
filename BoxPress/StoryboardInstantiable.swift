@@ -17,9 +17,9 @@ extension StoryboardInstantiable {
     }
 }
 
-func ClassNameFromStoryboardInstantiable(type: StoryboardInstantiable.Type) -> String {
+func ClassNameFromStoryboardInstantiable(_ type: StoryboardInstantiable.Type) -> String {
     let classString = NSStringFromClass(type as! AnyClass)
-    return classString.componentsSeparatedByString(".").last!
+    return classString.components(separatedBy: ".").last!
 }
 
 

@@ -20,42 +20,42 @@ class MoviesViewController: UIViewController, StoryboardInstantiable {
         moviesCollectionView.delegate = self
         
         
-        let button = UIButton(type: .InfoLight)
-        button.addTarget(self, action: #selector(MoviesViewController.rightBarButtonItemTapped(_:)), forControlEvents: .TouchUpInside)
+        let button = UIButton(type: .infoLight)
+        button.addTarget(self, action: #selector(MoviesViewController.rightBarButtonItemTapped(_:)), for: .touchUpInside)
         let barButtonItem = UIBarButtonItem(customView: button)
-        navigationItem.setRightBarButtonItem(barButtonItem, animated: true)
+        navigationItem.setRightBarButton(barButtonItem, animated: true)
     }
     
     
-    func rightBarButtonItemTapped(sender: UIButton) {
+    func rightBarButtonItemTapped(_ sender: UIButton) {
         let infoVC = InfoViewController.instantiate()
-        presentViewController(infoVC, animated: true, completion: nil)
+        present(infoVC, animated: true, completion: nil)
     }
 }
 
 
 extension MoviesViewController: UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let movie = moviesColletionViewDataSource.movieAtIndexPath(indexPath) else {
             return
         }
 
         let movieViewController: MovieViewController
-        if UIScreen.mainScreen().traitCollection.forceTouchCapability == .Available {
+        if UIScreen.main.traitCollection.forceTouchCapability == .available {
             movieViewController = MovieViewControllerFor3DTouch.instantiate()
             movieViewController.movieViewViewModel = MovieViewFor3DTouchViewModel(movie: movie)
         } else {
             movieViewController = MovieViewControllerForNon3DTouch.instantiate()
             movieViewController.movieViewViewModel = MovieViewForNon3DTouchViewModel(movie: movie)
         }
-        self.showViewController(movieViewController, sender: self)
+        self.show(movieViewController, sender: self)
     }
 }
 
 extension MoviesViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = (UIScreen.mainScreen().bounds.width - 2) / 3
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (UIScreen.main.bounds.width - 2) / 3
         let height = width * Movie.height / Movie.width
         return CGSize(width: width, height: height)
     }

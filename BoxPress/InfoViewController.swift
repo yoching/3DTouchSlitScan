@@ -10,8 +10,8 @@ import UIKit
 
 class InfoViewController: UIViewController, StoryboardInstantiable {
 
-    @IBAction func dismissSelf(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func dismissSelf(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
     

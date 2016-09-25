@@ -12,7 +12,7 @@ class MovieCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
 
-    func configure(viewModel: MovieCellViewModelType) {
+    func configure(_ viewModel: MovieCellViewModelType) {
         thumbnailImageView.image = viewModel.image
     }
 }

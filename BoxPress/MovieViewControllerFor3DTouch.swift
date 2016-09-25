@@ -10,16 +10,16 @@ import UIKit
 
 class MovieViewControllerFor3DTouch: MovieViewController, StoryboardInstantiable {
     
-    private var viewModel: MovieViewFor3DTouchViewModel {
+    fileprivate var viewModel: MovieViewFor3DTouchViewModel {
         return movieViewViewModel as! MovieViewFor3DTouchViewModel
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
         
         let touchEvent = touches.first!
         
-        let point = touchEvent.locationInView(self.view)
+        let point = touchEvent.location(in: self.view)
         viewModel.onTouchMoved(point, normalizedForce: touchEvent.force / touchEvent.maximumPossibleForce)
     }
 

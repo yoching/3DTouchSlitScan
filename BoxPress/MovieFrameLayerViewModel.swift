@@ -11,7 +11,7 @@ import UIKit
 protocol MovieFrameLayerViewModelType {
     var image: CGImage { get }
     var hole: Hole? { get }
-    var onHoleUpdated: (Hole? -> Void)? { get set }
+    var onHoleUpdated: ((Hole?) -> Void)? { get set }
 }
 
 class MovieFrameLayerViewModel: MovieFrameLayerViewModelType {
@@ -23,7 +23,7 @@ class MovieFrameLayerViewModel: MovieFrameLayerViewModelType {
         }
     }
 
-    var onHoleUpdated: (Hole? -> Void)?
+    var onHoleUpdated: ((Hole?) -> Void)?
     
     init(image: CGImage, hole: Hole?) {
         self.image = image

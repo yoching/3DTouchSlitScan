@@ -13,7 +13,7 @@ extension CALayer {
         self.init()
         self.contents = image
         self.frame = frame
-        self.bounds = CGRectMake(0, 0, frame.width, frame.height)
+        self.bounds = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         self.contentsGravity = kCAGravityResizeAspect
     }
 }

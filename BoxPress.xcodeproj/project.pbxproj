@@ -386,13 +386,16 @@
 					E3735E791C65EB4300EB262A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 4DNR887AL8;
+						LastSwiftMigration = 0800;
 					};
 					E3735E8D1C65EB4300EB262A = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = E3735E791C65EB4300EB262A;
 					};
 					E3735E981C65EB4300EB262A = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = E3735E791C65EB4300EB262A;
 					};
 				};
@@ -657,6 +660,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoshikuni-web.BoxPress";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -672,6 +676,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoshikuni-web.BoxPress";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -683,6 +688,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoshikuni-web.BoxPressTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoxPress.app/BoxPress";
 			};
 			name = Debug;
@@ -695,6 +701,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoshikuni-web.BoxPressTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoxPress.app/BoxPress";
 			};
 			name = Release;
@@ -706,6 +713,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoshikuni-web.BoxPressUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = BoxPress;
 				USES_XCTRUNNER = YES;
 			};
@@ -718,6 +726,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoshikuni-web.BoxPressUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = BoxPress;
 				USES_XCTRUNNER = YES;
 			};

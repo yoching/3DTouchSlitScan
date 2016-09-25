@@ -16,22 +16,22 @@ class MovieViewController: UIViewController {
     
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var backButton: UIButton!
-    @IBAction func backDidTap(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func backDidTap(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         for layerViewModel in movieViewViewModel.layerViewModels {
-            let movieFrameLayer = MovieFrameLayer(viewModel: layerViewModel, frame: UIScreen.mainScreen().bounds)
+            let movieFrameLayer = MovieFrameLayer(viewModel: layerViewModel, frame: UIScreen.main.bounds)
             movieView.layer.addSublayer(movieFrameLayer.imageLayer)
             movieFrameLayers.append(movieFrameLayer)
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         movieViewViewModel.onTouchEnded()
     }
 

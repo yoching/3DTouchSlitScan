@@ -15,7 +15,7 @@ struct Movie: FrameExportableMovieType {
     let orientation: MovieOrientation
     let numberOfFrames = 72
     
-    init(title: String, frameImageFileNamePrefix: String, frameOrder: MovieFrameOrder = .Ascending, orientation: MovieOrientation = .Vertical) {
+    init(title: String, frameImageFileNamePrefix: String, frameOrder: MovieFrameOrder = .ascending, orientation: MovieOrientation = .vertical) {
         self.title = title
         self.frameImageFileNamePrefix = frameImageFileNamePrefix
         self.frameOrder = frameOrder

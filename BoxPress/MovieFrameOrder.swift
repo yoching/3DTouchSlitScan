@@ -9,6 +9,6 @@
 import Foundation
 
 enum MovieFrameOrder {
-    case Ascending
-    case Descending
+    case ascending
+    case descending
 }

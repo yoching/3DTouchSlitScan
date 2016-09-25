@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ImageMaskLayerType {
-    func openHole(center center: CGPoint, radius: CGFloat)
+    func openHole(center: CGPoint, radius: CGFloat)
     func closeHole()
 }
 
@@ -25,26 +25,26 @@ class ImageMaskLayer: CAShapeLayer, ImageMaskLayerType {
         commonInit()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         fillRule = kCAFillRuleEvenOdd
-        fillColor = UIColor.blackColor().CGColor
+        fillColor = UIColor.black.cgColor
     }
     
     convenience init(frame: CGRect) {
         self.init()
         self.frame = frame
-        self.bounds = CGRectMake(0, 0, frame.width, frame.height)
+        self.bounds = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         closeHole()
     }
     
-    func openHole(center center: CGPoint, radius: CGFloat) {
+    func openHole(center: CGPoint, radius: CGFloat) {
         let pathWithHole = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0.0, endAngle: CGFloat(2.0*M_PI), clockwise: true)
-        pathWithHole.appendPath(UIBezierPath(rect: bounds))
-        path = pathWithHole.CGPath
+        pathWithHole.append(UIBezierPath(rect: bounds))
+        path = pathWithHole.cgPath
     }
     
     func closeHole() {
-        path = UIBezierPath(rect: bounds).CGPath
+        path = UIBezierPath(rect: bounds).cgPath
     }
     
 }

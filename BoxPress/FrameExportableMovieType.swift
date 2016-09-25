@@ -9,26 +9,26 @@
 import UIKit
 
 protocol FrameExportableMovieType: MovieType {
-    func frameImageAtIndex(index: Int) -> UIImage?
+    func frameImageAtIndex(_ index: Int) -> UIImage?
 }
 
 extension FrameExportableMovieType {
-    func frameImageAtIndex(index: Int) -> UIImage? {
+    func frameImageAtIndex(_ index: Int) -> UIImage? {
         let frameIndex: Int
         switch frameOrder {
-        case .Descending:
+        case .descending:
             frameIndex = index
-        case .Ascending:
+        case .ascending:
             frameIndex = numberOfFrames - 1 - index
         }
         
         let fileName = frameImageFileNamePrefix + String(format: "%02d", frameIndex)
         
         switch orientation {
-        case .Vertical:
+        case .vertical:
             return UIImage(named: fileName)
             
-        case .Horizontal:
+        case .horizontal:
             return UIImage(named: String(fileName))?.imageRotatedByDegrees(90, flip: false)
         }
     }

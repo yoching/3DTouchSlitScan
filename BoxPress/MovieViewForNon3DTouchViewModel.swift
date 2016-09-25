@@ -14,9 +14,9 @@ class MovieViewForNon3DTouchViewModel: MovieViewViewModelType {
     
     var layerViewModels: [MovieFrameLayerViewModel]
     
-    private let stopwatch = Stopwatch()
+    fileprivate let stopwatch = Stopwatch()
     
-    private var holeCenter: CGPoint? {
+    fileprivate var holeCenter: CGPoint? {
         didSet {
             guard let holeCenter = holeCenter else {
                 return
@@ -24,7 +24,7 @@ class MovieViewForNon3DTouchViewModel: MovieViewViewModelType {
             self.openHole(point: holeCenter, depth: depth)
         }
     }
-    private var depth: CGFloat = 0.0 {
+    fileprivate var depth: CGFloat = 0.0 {
         didSet {
             guard let holeCenter = holeCenter else {
                 return
@@ -44,12 +44,12 @@ class MovieViewForNon3DTouchViewModel: MovieViewViewModelType {
         }
     }
     
-    func onTouchBegan(point: CGPoint) {
+    func onTouchBegan(_ point: CGPoint) {
         holeCenter = point
         stopwatch.start()
     }
     
-    func onTouchMoved(point: CGPoint) {
+    func onTouchMoved(_ point: CGPoint) {
         holeCenter = point
         stopwatch.stop()
         stopwatch.start()
