@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImage {
-    public func imageRotatedByDegrees(_ degrees: CGFloat, flip: Bool) -> UIImage {
+    public func imageRotatedByDegrees(_ degrees: CGFloat, flip: Bool) -> UIImage? {
         let degreesToRadians: (CGFloat) -> CGFloat = {
             return $0 / 180.0 * CGFloat(M_PI)
         }
@@ -45,6 +45,6 @@ extension UIImage {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return newImage!
+        return newImage
     }
 }

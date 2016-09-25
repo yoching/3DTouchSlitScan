@@ -17,7 +17,7 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBAction func backDidTap(_ sender: AnyObject) {
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
