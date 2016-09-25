@@ -32,7 +32,7 @@ extension MovieViewViewModelType {
 
     func openHole(point point: CGPoint, depth: CGFloat) {
         
-        print("point: \(point), depth: \(depth)")
+//        print("point: \(point), depth: \(depth)")
         let countHoleOpenLayers = Int(floor(depth * CGFloat(countLayers-1)))
         
         layerViewModels.enumerate().forEach { (element: (index: Int, layerViewModel: MovieFrameLayerViewModel)) -> () in

@@ -34,6 +34,8 @@
 		E376C1091CB2AF22000139B2 /* MovieFrameLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376C1081CB2AF22000139B2 /* MovieFrameLayer.swift */; };
 		E37ADA8B1C9D31E000C42055 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37ADA8A1C9D31E000C42055 /* Movie.swift */; };
 		E37ADA8D1C9D324D00C42055 /* MovieFrameOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37ADA8C1C9D324D00C42055 /* MovieFrameOrder.swift */; };
+		E37DDA471D329651000B3A0D /* InfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E37DDA461D329651000B3A0D /* InfoViewController.storyboard */; };
+		E37DDA491D329666000B3A0D /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DDA481D329666000B3A0D /* InfoViewController.swift */; };
 		E383E3D51CACE6ED00B6482D /* MovieFrameLayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E383E3D41CACE6ED00B6482D /* MovieFrameLayerViewModel.swift */; };
 		E38EA3E31CAC382200A9D34F /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38EA3E21CAC382200A9D34F /* Hole.swift */; };
 		E3D667071CB411DD009080C1 /* MovieViewControllerFor3DTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D667061CB411DD009080C1 /* MovieViewControllerFor3DTouch.swift */; };
@@ -94,6 +96,8 @@
 		E376C1081CB2AF22000139B2 /* MovieFrameLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieFrameLayer.swift; sourceTree = "<group>"; };
 		E37ADA8A1C9D31E000C42055 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E37ADA8C1C9D324D00C42055 /* MovieFrameOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieFrameOrder.swift; sourceTree = "<group>"; };
+		E37DDA461D329651000B3A0D /* InfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoViewController.storyboard; sourceTree = "<group>"; };
+		E37DDA481D329666000B3A0D /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		E383E3D41CACE6ED00B6482D /* MovieFrameLayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieFrameLayerViewModel.swift; sourceTree = "<group>"; };
 		E38EA3E21CAC382200A9D34F /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 		E3D667061CB411DD009080C1 /* MovieViewControllerFor3DTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewControllerFor3DTouch.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			children = (
 				E31C48071C6F8FBC00520AE1 /* Movies */,
 				E31C480B1C6F93DD00520AE1 /* Movie */,
+				E37DDA451D32959E000B3A0D /* Info */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -301,6 +306,15 @@
 			name = Movie;
 			sourceTree = "<group>";
 		};
+		E37DDA451D32959E000B3A0D /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				E37DDA461D329651000B3A0D /* InfoViewController.storyboard */,
+				E37DDA481D329666000B3A0D /* InfoViewController.swift */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,6 +425,7 @@
 				E3750E311CBA2A6B008CD1FF /* MovieViewControllerForNon3DTouch.storyboard in Resources */,
 				E3735E881C65EB4300EB262A /* LaunchScreen.storyboard in Resources */,
 				E31C480F1C6F941000520AE1 /* MovieViewControllerFor3DTouch.storyboard in Resources */,
+				E37DDA471D329651000B3A0D /* InfoViewController.storyboard in Resources */,
 				E3735E851C65EB4300EB262A /* Assets.xcassets in Resources */,
 				E3735E831C65EB4300EB262A /* MoviesViewController.storyboard in Resources */,
 			);
@@ -474,6 +489,7 @@
 				E3396F081CB626C2001312CD /* Stopwatch.swift in Sources */,
 				E35429151CA65859005837F9 /* MovieCell.swift in Sources */,
 				E3D667071CB411DD009080C1 /* MovieViewControllerFor3DTouch.swift in Sources */,
+				E37DDA491D329666000B3A0D /* InfoViewController.swift in Sources */,
 				E38EA3E31CAC382200A9D34F /* Hole.swift in Sources */,
 				E3D667091CB41403009080C1 /* MovieViewFor3DTouchViewModel.swift in Sources */,
 				E35429111CA6555A005837F9 /* MovieType.swift in Sources */,

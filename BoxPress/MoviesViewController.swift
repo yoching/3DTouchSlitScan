@@ -18,9 +18,21 @@ class MoviesViewController: UIViewController, StoryboardInstantiable {
         super.viewDidLoad()
         moviesCollectionView.dataSource = moviesColletionViewDataSource
         moviesCollectionView.delegate = self
+        
+        
+        let button = UIButton(type: .InfoLight)
+        button.addTarget(self, action: #selector(MoviesViewController.rightBarButtonItemTapped(_:)), forControlEvents: .TouchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: button)
+        navigationItem.setRightBarButtonItem(barButtonItem, animated: true)
     }
     
+    
+    func rightBarButtonItemTapped(sender: UIButton) {
+        let infoVC = InfoViewController.instantiate()
+        presentViewController(infoVC, animated: true, completion: nil)
+    }
 }
+
 
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
