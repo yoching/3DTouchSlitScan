@@ -35,7 +35,7 @@ class Stopwatch: NSObject {
     }
     
     
-    func onTimer(_ sender: Timer) {
+    @objc func onTimer(_ sender: Timer) {
         print("onTimer")
         time += timeInterval
     }

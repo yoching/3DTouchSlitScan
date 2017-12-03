@@ -38,7 +38,7 @@ class ImageMaskLayer: CAShapeLayer, ImageMaskLayerType {
     }
     
     func openHole(center: CGPoint, radius: CGFloat) {
-        let pathWithHole = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0.0, endAngle: CGFloat(2.0*M_PI), clockwise: true)
+        let pathWithHole = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0.0, endAngle: CGFloat(2.0*Double.pi), clockwise: true)
         pathWithHole.append(UIBezierPath(rect: bounds))
         path = pathWithHole.cgPath
     }

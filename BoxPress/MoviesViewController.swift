@@ -27,7 +27,7 @@ class MoviesViewController: UIViewController, StoryboardInstantiable {
     }
     
     
-    func rightBarButtonItemTapped(_ sender: UIButton) {
+    @objc func rightBarButtonItemTapped(_ sender: UIButton) {
         let infoVC = InfoViewController.instantiate()
         present(infoVC, animated: true, completion: nil)
     }
