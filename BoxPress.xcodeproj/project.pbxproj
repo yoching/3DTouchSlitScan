@@ -410,6 +410,7 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 4DNR887AL8;
 						LastSwiftMigration = 0910;
+						ProvisioningStyle = Manual;
 					};
 					E3735E8D1C65EB4300EB262A = {
 						CreatedOnToolsVersion = 7.2;
@@ -808,12 +809,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4DNR887AL8;
 				INFOPLIST_FILE = BoxPress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoshikuni-web.BoxPress";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ca0372b1-e397-4fdb-96b1-22f5692fe4c0";
+				PROVISIONING_PROFILE_SPECIFIER = "BoxPress Prod";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -825,12 +829,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4DNR887AL8;
 				INFOPLIST_FILE = BoxPress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoshikuni-web.BoxPress";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ca0372b1-e397-4fdb-96b1-22f5692fe4c0";
+				PROVISIONING_PROFILE_SPECIFIER = "BoxPress Prod";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
