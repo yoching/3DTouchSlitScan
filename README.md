@@ -1,7 +1,8 @@
 # BoxPress
 
 This is a experimental project using 3D touch feature of iPhone.
-Scanning video images using 3d touch.
+
+Slit-scanning video images controlled by 3d touch.
 
 Please see these videos to see the behavior.
 
