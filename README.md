@@ -6,6 +6,8 @@ This is a experimental project using 3D touch feature of iPhone.
 - select picture
 - deep press the picture
 
+![](./Sample.png)
+
 ## Reference
 
 - [An Informal Catalogue of Slit-Scan Video Artworks and Research](http://www.flong.com/texts/lists/slit_scan/)
