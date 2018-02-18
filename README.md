@@ -1,4 +1,4 @@
-# BoxPress
+# 3D Touch Slit Scan
 
 This is a experimental project using 3D touch feature of iPhone.
 
